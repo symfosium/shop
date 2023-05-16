@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Items from './components/Items'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: [
+        {
+          id: 1,
+          title: 'Harmaa tuoli',
+          img: 'chair-grey.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'chairs',
+          price: '49.99',
+        },
+        {
+          id: 2,
+          title: 'Musta pöytä',
+          img: 'table-black.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'tables',
+          price: '189.99',
+        },
+        {
+          id: 3,
+          title: 'Valkoinejn pöytä',
+          img: 'table-white.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'tables',
+          price: '179.99',
+        },
+        {
+          id: 4,
+          title: 'Sänky',
+          img: 'bed-blue.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'beds',
+          price: '399.99',
+        },
+        {
+          id: 5,
+          title: 'Lamppu',
+          img: 'lamp.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'lamps',
+          price: '134.99',
+        },
+        {
+          id: 6,
+          title: 'Sohva harmaa',
+          img: 'sofa.jpeg',
+          desc: 'Lorem ipsum dolor sit amet, conskdekl poeikfga',
+          category: 'lamps',
+          price: '789.99',
+        },
+      ],
+    }
+  }
+  render() {
+    return (
+      <div className="wrapper">
+        <Header />
+        <Items items={this.state.items} />
+        <Footer />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
